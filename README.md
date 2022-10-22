@@ -1,6 +1,6 @@
-# Misterious Krakow
+# Image carousel
 
-## Reaponsive animated card
+## JS image carousel
 
 Working example: https://raff1010x.github.io/37.Image-Carousel/
 
