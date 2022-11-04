@@ -1,0 +1,108 @@
+//<-- SECTION WORK -->
+
+#settings1, #settings2
+  width: 50vw
+  position: absolute
+  z-index: 101
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+#settings1
+  
+
+#settings2
+  left: 50vw
+
+#section-3-container
+  @include flex-column-center
+  justify-content: space-evenly
+
+  h2
+    @include font-colorfull($vw: 8vw, $rem: 2.5rem, $px: 66px)
+    @media (max-width: #{$width-tablet}) and (orientation : landscape)
+      font-size: 6vw !important
+
+
+.projects-grid
+  @include flex-row-center
+  justify-content: center
+  perspective: 1000px
+  width: 100%
+  height: 40vh
+
+
+
+.project
+  position: absolute
+  font-size: 1.5rem
+  text-align: center
+  transition: .75s
+  width: Min(70vw, 70vh)
+  height: auto
+  border-radius: .25rem
+  text-decoration: none
+  @media (max-width: #{$width-tablet}) 
+    width: Min(80vw, 80vh)
+
+.project-image-container
+  @include flex-row-center
+  justify-content: center
+  width: 100%
+  height: 45vh
+  overflow: hidden
+  border-radius: .25rem
+
+.project-image
+  width: 100%
+  border-radius: .25rem
+
+.project-title
+  color: var(--data-color-font)
+  font-size: 1rem
+
+
+#slider
+  @include flex-row-center
+  justify-content: space-evenly
+
+.slider-button
+  color: var(--data-color-font)
+  z-index: 100
+  i 
+    color: rgba(255, 255, 255, 0.5)
+    font-size: 4rem
+    margin: 0 4rem 0 4rem
+    text-shadow: 0 0 30px var(--data-color-font-extra-x)
+    animation-name: fade-out2
+    animation-duration: 1s
+    animation-iteration-count: infinite
+
+
+@keyframes fade-out
+  0%
+   // opacity: 1
+  100%
+    //box-shadow: 0 0 50vw var(--data-color-font-extra-x)
+    opacity: 0
+    transform: scale(4)
+
+@keyframes fade-out2
+  0%
+    opacity: 1
+  100%
+    opacity: 0.7
+
+
+@media only screen and (hover: none) and (pointer: coarse) and (max-width: #{$width-tablet}) and (orientation : landscape)
+  .btn-show-all
+    opacity: 0
+  .slider-button
+    i 
+      margin: 0 13rem 0 13rem
+  #section-3-container
+    h2
+      transform: scale(.8)
+  #slider
+    position: absolute
